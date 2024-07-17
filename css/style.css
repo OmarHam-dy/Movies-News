@@ -1,0 +1,150 @@
+:root {
+  --transition: 1s;
+  --main-color: rgb(255, 0, 191);
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.1rem var(--main-color);
+}
+
+.make-pointer {
+  cursor: pointer;
+}
+
+nav {
+}
+
+nav .form-control,
+nav .form-control:focus,
+nav .form-control::placeholder {
+  color: #fff;
+}
+.form-control {
+  border: none;
+}
+nav .search-field {
+  position: relative;
+  border: solid 2px #fff;
+}
+nav .search-field::before {
+  content: '\f002';
+  position: absolute;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: var(--main-color);
+  font-size: 20px;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+nav ul {
+  height: 100vh;
+  overflow-y: auto;
+  transition-duration: var(--transition);
+  width: 300px;
+}
+nav ul li {
+  padding: 15px 10px 15px 20px;
+  border-bottom: solid 2px #fff;
+  position: relative;
+  z-index: 2;
+  transition-duration: var(--transition);
+  cursor: pointer;
+}
+
+nav ul li::before {
+  content: '';
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+  transition-duration: var(--transition);
+  z-index: -1;
+}
+
+nav ul li:hover::before {
+  left: 0;
+}
+nav ul li:hover {
+  color: #000;
+}
+
+.hide {
+  transform: translateX(-100%);
+}
+nav .icon i {
+  color: #fff;
+}
+
+/* Home */
+
+.home {
+  width: 100%;
+  height: 90vh;
+  background-image: url();
+  background-color: #999;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+.home::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.home .details {
+  color: #fff;
+  z-index: 2;
+}
+.home .details .image {
+  width: 25%;
+}
+.home .details .content {
+  flex: 1;
+}
+.home .content h4 {
+}
+.home .content p {
+}
+.home .content ul li::marker {
+  color: var(--main-color);
+  font-size: 0.7rem;
+}
+.home .content ul li {
+  margin-right: 40px;
+  margin-bottom: 10px;
+}
+
+/* Main */
+
+main .card {
+  min-height: 400px;
+}
+
+main .card img {
+  height: 70%;
+}
+.form-container form {
+  border: solid 2px var(--main-color) !important;
+}
+.form-container form button {
+  width: 100px;
+  background-color: var(--main-color);
+  color: #fff;
+  border: solid 2px #fff;
+}
+.form-container form button:hover {
+  border: solid 2px #fff;
+}
+/* 
+main .row > div > div {
+  min-height: 100%;
+} */

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Movies</title>
+  </head>
+  <body>
+    <nav class="py-3 px-5 fs-3 position-fixed w-100 top-0 start-0 z-2 shadow">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="name text-light">Movies</div>
+        <div class="search-field w-75 rounded-pill">
+          <input
+            type="text"
+            class="form-control rounded-pill bg-transparent"
+            id="search"
+            placeholder="Search on Movie..."
+          />
+        </div>
+        <div class="icon make-pointer">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+      <ul
+        class="hide list-unstyled position-absolute text-bg-dark top-0 start-0"
+      >
+        <li class="link" data-category="now_playing">Now Playing</li>
+        <li class="link" data-category="popular">Popular</li>
+        <li class="link" data-category="top_rated">Top Rated</li>
+        <li class="link" data-category="upcoming">Upcoming</li>
+      </ul>
+    </nav>
+
+    <div
+      class="home d-flex justify-content-center align-items-center text-center"
+    >
+      <div class="container z-1">
+        <div class="details d-flex justify-content-between">
+          <div class="image">
+            <img src="" alt="" class="w-100 d-block" />
+          </div>
+          <div
+            class="content ms-5 text-start d-flex flex-column justify-content-between"
+          >
+            <h3 class="fs-1">The Body</h3>
+            <p class="">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+              eius sequi dolore impedit nostrum, assumenda cupiditate harum
+              mollitia ex expedita, culpa, libero aspernatur numquam unde
+              quaerat maxime quasi debitis? Distinctio.
+            </p>
+            <ul class="d-flex align-items-center flex-wrap"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="py-5 bg-dark">
+      <div class="container">
+        <div class="row"></div>
+      </div>
+    </main>
+
+    <div class="form-container py-5 bg-dark">
+      <div class="container">
+        <form action="" class="p-5 w-75 mx-auto text-bg-dark rounded-1">
+          <div class="mb-5">
+            <input
+              required
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="mb-5">
+            <input
+              required
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="mb-5">
+            <input
+              required
+              type="number"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Enter your phone number"
+            />
+          </div>
+          <div class="mb-5">
+            <input
+              required
+              type="password"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Enter your password"
+            />
+          </div>
+          <button type="button" class="btn d-block mx-auto">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
