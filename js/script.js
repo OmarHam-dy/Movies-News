@@ -7,8 +7,9 @@ const navList = document.querySelector('nav ul');
 const navIcon = document.querySelector('nav .icon');
 const mainContainer = document.querySelector('main .row');
 const movieCard = document.querySelectorAll('main .card');
-
+const inputSearch = document.querySelector('nav #search');
 // console.log(movieCard);
+console.log(inputSearch);
 
 const detailsElements = {
   background: document.querySelector('.home'),
@@ -64,6 +65,21 @@ const fetchAndDisplayDetails = async function (id) {
   }
 };
 fetchAndDisplayDetails(1022789);
+
+const fetchAndDisplayRequestedMovies = async function (movieName) {
+  const API_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movieName}`;
+  try {
+    const response = await fetch(API_URL);
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    const data = await response.json();
+    console.log(data.results);
+    displayMovies(data.results);
+  } catch (error) {
+    console.error('There has been a problem with your fetch operation:', error);
+  }
+};
 
 const displayMovies = function (movies) {
   mainContainer.innerHTML = '';
@@ -133,7 +149,11 @@ mainContainer.addEventListener('click', function (e) {
     fetchAndDisplayDetails(e.target.closest('.card').dataset.id);
   }
 });
-
+inputSearch.addEventListener('keyup', function (e) {
+  if (e.target.value.length > 3) {
+    fetchAndDisplayRequestedMovies(e.target.value);
+  }
+});
 window.addEventListener('scroll', function () {
   if (window.scrollY == 0) {
     nav.classList.remove('bg-dark', 'shadow');
